@@ -1,4 +1,12 @@
 .notification {
   font-size: 20px;
   text-align: center;
+
+  padding: 8px 16px;
+
+  width: 80%;
+
+  background-color: #fff;
+
+  box-shadow: 0 0 5px rgba(0,0,0, 0.2);
 }

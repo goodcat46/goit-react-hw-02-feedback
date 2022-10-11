@@ -6,7 +6,8 @@ import Btn from './Btn/Btn';
 import Statistics from './Statistics/Statistics';
 import Notification from './Notification/Notification';
 
-const FeedbackList = ({ toAddFeedback, feedbackListKeys, state }) => {
+const FeedbackList = ({ toAddFeedback, state }) => {
+  let feedbackListKeys = Object.keys(state);
   function toCountTotalFeedbacks() {
     return Object.values(state).reduce((acc, el) => {
       return acc + el;
@@ -35,7 +36,9 @@ const FeedbackList = ({ toAddFeedback, feedbackListKeys, state }) => {
           percentage={toCountPosFeedbackPercentage()}
         />
       )}
-      {toCountTotalFeedbacks() === 0 && <Notification text="There is no feedback" />}
+      {toCountTotalFeedbacks() === 0 && (
+        <Notification text="There is no feedback" />
+      )}
     </div>
   );
 };
