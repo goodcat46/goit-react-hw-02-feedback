@@ -19,7 +19,6 @@ export class App extends Component {
       <div className={css.app}>
         <FeedbackList
           toAddFeedback={this.toAddFeedback}
-          // feedbackListKeys={Object.keys(this.state)}
           state={this.state}
         />
       </div>
