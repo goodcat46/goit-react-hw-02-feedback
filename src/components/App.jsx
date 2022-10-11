@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import FeedbackList from './FeedbackList/FeedbackList';
 import css from './app.module.css';
-import { Form } from 'formik';
 
 export class App extends Component {
   state = {
