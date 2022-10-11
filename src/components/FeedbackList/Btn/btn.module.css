@@ -1,0 +1,12 @@
+.button {
+  padding: 8px 16px;
+
+  background-color: #fff;
+  
+}
+.button:hover{
+  box-shadow:  0 0 10px rgba(122, 122, 122, 0.5);
+}
+.button:active{
+  box-shadow:  0 0 3px rgba(122, 122, 122, 0.5);
+}

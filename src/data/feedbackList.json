@@ -1,0 +1,5 @@
+[
+  { "id": 1, "feedbackName": "Good" },
+  { "id": 2, "feedbackName": "Neutral" },
+  { "id": 3, "feedbackName": "Bad" }
+]
