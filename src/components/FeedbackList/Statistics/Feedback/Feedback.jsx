@@ -1,5 +1,5 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Feedback = ({ feedbackName, value }) => {
   return (
@@ -10,6 +10,9 @@ const Feedback = ({ feedbackName, value }) => {
   );
 };
 
-Feedback.propTypes = {}
+Feedback.propTypes = {
+  feedbackName: PropTypes.string,
+  value: PropTypes.number,
+};
 
-export default Feedback
+export default Feedback;
