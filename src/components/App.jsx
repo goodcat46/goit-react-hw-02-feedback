@@ -1,5 +1,8 @@
 import { Component } from 'react';
-import FeedbackList from './FeedbackList/FeedbackList';
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+import Title from './Title/Title';
+import Statistics from './Statistics/Statistics';
+import Notification from './Notification/Notification';
 import css from './app.module.css';
 
 export class App extends Component {
@@ -9,7 +12,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  toAddFeedback = ({ target: { textContent } }) => {
+  onLeaveFeedback = ({ target: { textContent } }) => {
     this.setState(prvState => ({
       [textContent]: (prvState[textContent] += 1),
     }));
@@ -27,15 +30,29 @@ export class App extends Component {
     }
   }
   render() {
+    console.log(this.state);
     return (
       <div className={css.app}>
-        <FeedbackList
-          feedbackList={Object.keys(this.state)}
-          toAddFeedback={this.toAddFeedback}
-          totalFeedback={this.countTotalFeedback()}
-          positiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}
-          state={this.state}
-        />
+        <div className={css.container}>
+          <Title title="Please leave feedback" />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
+          <Title title="Statistics" />
+          {this.countTotalFeedback() !== 0 && (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              percentage={this.countPositiveFeedbackPercentage()}
+            />
+          )}
+          {this.countTotalFeedback() === 0 && (
+            <Notification message="There is no feedback" />
+          )}
+        </div>
       </div>
     );
   }

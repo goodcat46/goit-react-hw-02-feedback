@@ -6,6 +6,7 @@ const Feedback = ({ feedbackName, value }) => {
     <span>
       <span>{feedbackName}: </span>
       <span>{value}</span>
+      {feedbackName === 'percentage' && '%'}
     </span>
   );
 };
