@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './btn.module.css';
 
-const Btn = ({feedbackName, onLeaveFeedback }) => {
+const Btn = ({ feedbackName, onLeaveFeedback }) => {
   return (
     <button
       className={css.button}
-      onClick={onLeaveFeedback}
+      onClick={() => onLeaveFeedback(feedbackName)}
       type="button"
     >
       {feedbackName}
